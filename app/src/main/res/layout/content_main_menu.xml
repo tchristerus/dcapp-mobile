@@ -10,8 +10,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="videosync.dcsecurity.MainActivity"
-    tools:showIn="@layout/activity_main"
+    tools:context="videosync.dcsecurity.MainMenu"
+    tools:showIn="@layout/activity_main_menu"
     android:background="@drawable/dcbackground">
 
 
@@ -26,27 +26,34 @@
         android:gravity="center"
         android:width="50dp"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/staffnr"
-        android:background="#FFFFFF"
-        android:padding="10dp"
-        android:layout_centerVertical="true"
-        android:hint="@string/pers_nr_placeholder"/>
-
     <Button
-        android:text="@string/btn_login"
+        android:text="@string/btn_scan_barcode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
-        android:id="@+id/btn_login"
-        android:layout_below="@+id/staffnr"
-        android:layout_centerHorizontal="true"
+        android:id="@+id/btn_scan"
         android:background="@drawable/roundedbutton"
-        android:padding="10dp"
         android:backgroundTint="@color/colorPrimary"
-        android:textColor="#FFF"/>
+        android:textColor="#FFF"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="@string/btn_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="41dp"
+        android:id="@+id/btn_login"
+        android:background="@drawable/roundedbutton"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="#FFF"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_below="@+id/btn_scan"
+        android:layout_alignStart="@+id/btn_scan" />
 </RelativeLayout>

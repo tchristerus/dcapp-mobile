@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">DC security</string>
+    <string name="pers_nr_placeholder">Pers Nr.</string>
+    <string name="btn_login">Aanmelden</string>
+    <string name="btn_login_active">Aanmelden...</string>
+    <string name="btn_scan_barcode">Scannen</string>
+    <string name="btn_logout">Afmelden</string>
+    <string name="error_no_pers_nr">Vul uw personeelsnummer in</string>
+    <string name="error_unknown_pers_nr">Onjuist personeelsnummer</string>
     <string name="authors">Created by Vincent Stakenburg and Thomas Christerus</string>
+    <string name="title_activity_main_menu">MainMenu</string>
 </resources>
