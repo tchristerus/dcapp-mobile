@@ -10,11 +10,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import videosync.dcsecurity.Utils.RestHandler;
 import videosync.dcsecurity.Utils.ToastUtil;
 
 public class MainMenu extends AppCompatActivity {
 
     Button btnScan;
+    Button btnlogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +27,16 @@ public class MainMenu extends AppCompatActivity {
         setContentView(R.layout.activity_main_menu);
 
         this.btnScan = (Button)findViewById(R.id.btn_scan);
+        this.btnlogout = (Button)findViewById(R.id.btn_logout);
+        this.btnlogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         this.btnScan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,7 +69,22 @@ public class MainMenu extends AppCompatActivity {
                 String contents = intent.getStringExtra("SCAN_RESULT");
                 String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
 
-                ToastUtil.shortToast(getApplicationContext(),contents);
+                try {
+                    JSONObject jsonObject = new JSONObject((contents));
+                    System.out.println("LocationID: " + jsonObject.getInt("loc_id"));
+                    String locName = RestHandler.getLocationName(jsonObject.getInt("loc_id"));
+                    if(locName != null) {
+                        Intent newIntent = new Intent(getApplicationContext(), AddLocation.class);
+                        newIntent.putExtra("locationId", jsonObject.getInt("loc_id"));
+                        newIntent.putExtra("locationName", locName);
+                        newIntent.putExtra("staffNr", getIntent().getExtras().getInt("staffNr"));
+                        startActivity(newIntent);
+                        ToastUtil.shortToast(getApplicationContext(), locName);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
             }
             else
             if (resultCode == RESULT_CANCELED) {

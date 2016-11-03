@@ -6,7 +6,11 @@
     <string name="btn_scan_barcode">Scannen</string>
     <string name="btn_logout">Afmelden</string>
     <string name="error_no_pers_nr">Vul uw personeelsnummer in</string>
+    <string name="login_success">Vul uw personeelsnummer in</string>
     <string name="error_unknown_pers_nr">Onjuist personeelsnummer</string>
     <string name="authors">Created by Vincent Stakenburg and Thomas Christerus</string>
     <string name="title_activity_main_menu">MainMenu</string>
+    <string name="remark_placeholder">Opmerking (optioneel)</string>
+    <string name="new_record_success">Voltooid</string>
+    <string name="new_record_fail">Er is een fout opgetreden..</string>
 </resources>

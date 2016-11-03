@@ -47,6 +47,6 @@
         android:layout_centerHorizontal="true"
         android:background="@drawable/roundedbutton"
         android:padding="10dp"
-        android:backgroundTint="@color/colorPrimary"
+        android:backgroundTint="@color/btnRed"
         android:textColor="#FFF"/>
 </RelativeLayout>
