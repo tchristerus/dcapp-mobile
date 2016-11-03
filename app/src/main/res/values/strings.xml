@@ -2,6 +2,7 @@
     <string name="app_name">DC security</string>
     <string name="pers_nr_placeholder">Pers Nr.</string>
     <string name="btn_login">Aanmelden</string>
+    <string name="btn_send">Versturen</string>
     <string name="btn_login_active">Aanmelden...</string>
     <string name="btn_scan_barcode">Scannen</string>
     <string name="btn_logout">Afmelden</string>
